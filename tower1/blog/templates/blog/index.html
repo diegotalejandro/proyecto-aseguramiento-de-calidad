@@ -1,0 +1,97 @@
+{% extends 'blog/base.html' %}
+
+
+{% block contenido %}
+
+
+            <div class="row">
+
+                <div class="main-page">
+                    
+
+                    <div class="content-main contact-content">
+
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 biliend">
+                                <div class="banner-2-container">
+                                    <div class="aenean">
+                                        <h4>Calle Falsa 123</h4>
+                                        <h3>Edificio Springfield</h3>
+                                    </div>    
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="contact-content-upper">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="gallery_title">
+                                        <h3>Inicio de Sesión</h3>
+                                        <h4>Bienvenido residente</h4>
+                                    </div>    
+                                </div>                            
+                            </div>
+     
+                            <div class="row">  
+                                <div class="col-sm-12 col-md-6 contact_left">        
+                                    <form class="form-horizontal" method="POST">
+                                    {% csrf_token %}
+          
+          
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="USUARIO..." >      
+                                        </div>
+          
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="CONTRASEÑA..." >        
+                                        </div>
+                                      
+
+                                            
+                                        <div class="form-group">
+                                            <input id="submit" name="submit" type="submit" value="Entrar" class="btn view_more btn-submit">
+                                        </div>            
+                                    
+                                    </form>    
+                                </div> 
+                                <!-- .contact-left -->
+      
+                                <div class="col-sm-12 col-md-6 contact_right">
+                                    
+                                    <div class="col-md-12 contact_title">
+                                        Sistema de administración de su edificio.
+                                    </div>
+                                    
+                                    <div class="col-md-12 contact_sub_title">
+                                        Empresa tanto
+                                    </div>
+                               
+                                    <div class="col-md-12 contact_text">
+                                        Brindamos la mejor solución para su condominio, de manera localizada y centralizada en usted, para dudas o sugerencias:
+                                    </div>
+                                    
+                                    <div class="col-md-12 contact_info">
+                                        <a href="mailto:info@company.com" class="contact-info-link">
+                                            <i class="fa fa-envelope contact-fa"></i>info@company.com
+                                        </a><br/>
+                                        <a href="+1234567890" class="contact-info-link">
+                                            <i class="fa fa-mobile contact-fa"></i>(+123) 456 7890
+                                        </a><br/>
+                                        <a href="+0987654321" class="contact-info-link">
+                                            <i class="fa fa-phone contact-fa"></i>(+098) 765 4321
+                                        </a><br/>
+                                    </div>
+
+                              
+                                </div> <!-- .contact_right -->
+
+                            </div> <!-- .row -->
+                        </div>
+
+
+
+                    </div> <!-- .contact-content -->
+                </div> <!-- .main-page -->
+            </div> <!-- .row -->
+
+{% endblock contenido %}

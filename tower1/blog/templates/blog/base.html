@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,400italic'>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/font-awesome/css/font-awesome.min.css' %}">    
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+<!--
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4-
+-->
+    <title>Mi Comunidad</title>
+</head>
+
+<body>
+    <div class="main-body">	
+        <div class="container">
+
+    {% block contenido %}  
+
+
+
+
+    {% endblock contenido %}
+
+
+
+
+
+
+
+            
+        
+            <footer class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer">
+                    <p class="copyright">Mi comunidad
+                    
+                    | Sistema de Administración de condominios
+                </div>    
+            </footer>  <!-- .row -->      
+        </div> <!-- .container -->
+    </div> <!-- .main-body -->
+
+    <!-- JavaScript -->
+    <script src="{% static 'blog/js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></scrit>
+
+</body>
+</html>
