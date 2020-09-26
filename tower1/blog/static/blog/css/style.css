@@ -448,9 +448,9 @@ body {
 	font-weight: 600;
 }
 
-.first { background-color: rgba(36,148,176,0.8); }
-.second { background-color: rgba(21, 150, 144, 0.8); }
-.third { background-color: rgba(211,150,14,0.8); }
+.first { background-color: rgba(101, 212, 97, 0.8); }
+.second { background-color: rgba(224, 214, 63, 0.8); }
+.third { background-color: rgba(223, 48, 48, 0.8); }
 
 .footer {
 	color: white;

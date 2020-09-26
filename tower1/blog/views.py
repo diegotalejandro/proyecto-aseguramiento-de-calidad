@@ -4,6 +4,7 @@ from django.contrib.auth import login as do_login
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Anuncio
 
 # Create your views here.
 
@@ -34,6 +35,18 @@ def index(request):
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'blog/home.html')
-    return render(request, 'blog/index.html')
-    
+        
+        #anuncios_admin = Anuncio.objects.all()[:3]
+        anuncios_admin = Anuncio.objects.filter( tipo_usuario = "1" )[:3]
+        anuncios_usuarios = Anuncio.objects.filter( tipo_usuario = "0" )[:3]
+
+        
+        return render(request, 'blog/home.html',{'anuncios_admin' : anuncios_admin, 'anuncios_usuarios' : anuncios_usuarios})
+    return redirect('index')
+
+
+def logout(request):
+    #finaliza la sesion
+    do_logout(request)
+    #manda a la portada
+    return redirect('/')

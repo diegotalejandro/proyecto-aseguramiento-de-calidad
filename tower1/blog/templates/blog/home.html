@@ -1,33 +1,88 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base2.html' %}
 
-
+{% load static %}
 {% block contenido %}
 
+                  <div class="content-main">
+                            <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="box bottom-main">
+                                    <div class="info float-container">
+                                        <div class="col-sm-12 bottom-title">
+                                            <h3 class="text-uppercase">Noticias Importantes</h3>
+                                            <h4 class="text-uppercase">Atención!</h4>
+                                        </div>
+                                        <div class="row">
+                                         {% for anuncio_a in anuncios_admin %}
+                                            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                                <div class="bottom-img">
+                                                    <img src="{% static 'blog/images/home-img-4.jpg' %}" alt="Image">
+                                                    {% if anuncio_a.prioridad == "1" %}
+                                                    <p class="first">{{ anuncio_a.titulo }}</p> 
+                                                    {% endif %}
+                                                    {% if anuncio_a.prioridad == "2" %}
+                                                    <p class="second">{{ anuncio_a.titulo }}</p> 
+                                                    {% endif %} 
+                                                    {% if anuncio_a.prioridad == "3" %}
+                                                    <p class="third">{{ anuncio_a.titulo }}</p> 
+                                                    {% endif %}                                                                                                            
+                                                    
+                                                </div>                                      
+                                            </div>
+                                            {% endfor %}
 
-            <div class="row">
+                                        </div>
+                                        <p class="bottom-desc">Proximos acontecimientos importantes para la comunidad, permanecer al tanto</p><hr />
+                                        <div class="col-sm-12 location-main"> 
+                                            <div class="pull-right bottom-user">
+                                                <a href="#"><i class="fa fa-caret-right"></i><span>Ver Todas</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                        <div class="row margin-b-30">
 
-                <div class="main-page">
-                    
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="box paris">
+                                    <div class="info float-container">
+                                        <div class="col-sm-12 london-title paris-title">
+                                            <h3 class="text-uppercase">Anuncios de la Comunidad</h3>
+                                            <h4 class="text-uppercase">Venta de productos, servicios y más !</h4>
+                                        </div>
+                                        <div class="row">
+                                         {% for anuncio_b in anuncios_usuarios %}
+                                            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                                                <div class="bottom-img">
+                                                    <img src="{% static 'blog/images/home-img-4.jpg' %}" alt="Image">
+                                                    <p class="third">{{ anuncio_b.titulo }}</p> 
+                                                     
+                                                </div>                                      
+                                            </div>
+                                            {% endfor %}
 
-                    <div class="content-main contact-content">
+                                        </div>
+                                        <p class="bottom-desc">Proximos acontecimientos importantes para la comunidad, permanecer al tanto</p><hr />
+                                        <div class="col-sm-12 location-main"> 
+                                            <div class="pull-right bottom-user">
+                                                <a href="#"><i class="fa fa-caret-right"></i><span>Ver Todas</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+
 
                         <div class="row margin-b-30">
-                            <div class="col-xs-12 col-sm-12 col-md-12 biliend">
-                                <div class="banner-2-container">
-                                    <div class="aenean">
-                                        <h4>ESTE ES EL HOMEEEE</h4>
-                                        <h3>Edificio Springfield</h3>
-                                    </div>    
-                                </div>                                
-                            </div>
+
                         </div>
 
 
 
-
-
-                    </div> <!-- .contact-content -->
-                </div> <!-- .main-page -->
-            </div> <!-- .row -->
+                    </div> <!-- .content-main -->
 
 {% endblock contenido %}
