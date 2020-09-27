@@ -1,0 +1,120 @@
+{% extends 'blog/base2.html' %}
+
+
+{% load static %}
+{% block contenido %}
+
+
+                    <div class="content-main">
+                    
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 biliend">
+                                <div class="banner-2-container">
+                                    <div class="aenean">
+                                        <h4>Anuncios de la Comunidad</h4>
+                                        <h3>Últimos anuncios</h3>
+                                    </div>    
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="row margin-b-30">
+
+                            {% for anuncios in anuncios_usuarios %}
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="box paris">                     
+                                    <div class="box-icon">
+                                        <img src="{%static 'blog/images/home-img-3.jpg' %}" alt="Image" class="img-responsive">                                  
+                                    </div>
+                                    <div class="info float-container">
+                                        <div class="col-sm-12 london-title paris-title">
+                                                                                 
+                                            <h3 class="text-uppercase">{{anuncios.titulo}}</h3>
+                                            <h4 class="text-uppercase">{{anuncios.fecha}}</h4>
+                                        </div>
+                                        <p>{{anuncios.contenido}}</p><hr />
+                                        <div class="col-sm-12 location-main">
+                                            <div class="pull-left location location2 ">
+
+                                                                                      
+                                                <i class="fa fa-map-marker fa-2x"></i><span>{{anuncios.autor}}</span>
+                                            </div>
+                                            <div class="pull-right user-icons">
+
+                                                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to={{request.user.email}}" target="_blank"><i class="fa fa-user fa-2x"></i></a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {% endfor %}
+
+                            
+                        </div> <!-- row -->
+
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 biliend">
+                                <div class="banner-2-container">
+                                    <div class="aenean">
+                                        <h4>Anuncios </h4>
+                                        <h3>Más Antiguos</h3>
+                                    </div>    
+                                </div>                                
+                            </div>
+                        </div>
+
+                            <div class="row margin-b-30">
+
+                            {% for anuncios in anuncios_usuarios2 %}
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="box paris">                                          
+                                    <div class="box-icon">
+                                        <img src="{%static 'blog/images/home-img-3.jpg' %}" alt="Image" class="img-responsive">                                 
+                                    </div>
+                                    <div class="info float-container">
+                                        <div class="col-sm-12 london-title paris-title">
+
+                                                                        
+                                            <h3 class="text-uppercase">{{anuncios.titulo}}</h3>
+                                            <h4 class="text-uppercase">{{anuncios.fecha}}</h4>
+                                        </div>
+                                        <p>{{anuncios.contenido}}</p><hr />
+                                        <div class="col-sm-12 location-main">
+                                            <div class="pull-left location location2 ">                                                                              
+                                                <i class="fa fa-map-marker fa-2x"></i><span>{{anuncios.autor}}</span>
+                                            </div>
+                                            <div class="pull-right user-icons">
+                                                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to={{request.user.email}}&subject={{anuncios.titulo}}" target="_blank"><i class="fa fa-user fa-2x"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            
+                        </div> <!-- row -->
+                        </div> <!-- row -->
+
+                    </div> <!-- .content-main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock contenido %}
