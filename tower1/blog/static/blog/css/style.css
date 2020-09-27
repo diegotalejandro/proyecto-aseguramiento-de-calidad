@@ -329,6 +329,8 @@ body {
 }
 .london { border-top: 7px solid #19beb6; }
 .paris { border-top: 7px solid #df9801; }
+.moscow { border-top: 7px solid #750000; }
+
 .box-icon {
 	width: 100%;
 	position: relative;
@@ -360,6 +362,23 @@ body {
 	padding: 10px 0px;
 }
 .info > li:last-child {	border-bottom: none; }
+
+.moscow-title {
+	padding: 0 0 0 5px;
+	border-left: 2px solid #750000;
+	margin: 25px 0px;
+}
+.moscow-title h3 {
+	color: #750000;
+	font-size: 18px;
+	margin: 5px;
+}
+.moscow-title h4 {
+	font-size: 14px;
+	margin: 5px;
+}
+.location3 i { color:#750000; }
+
 
 .london-title {
 	padding: 0 0 0 5px;
@@ -450,7 +469,10 @@ body {
 
 .first { background-color: rgba(101, 212, 97, 0.8); }
 .second { background-color: rgba(224, 214, 63, 0.8); }
-.third { background-color: rgba(223, 48, 48, 0.8); }
+.third { background-color: rgba(119, 16, 16, 0.8); }
+.fourth { background-color: rgba(218, 123, 34, 0.8); }
+
+fourth
 
 .footer {
 	color: white;

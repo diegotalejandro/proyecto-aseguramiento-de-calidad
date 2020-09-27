@@ -1,0 +1,183 @@
+{% extends 'blog/base2.html' %}
+
+
+{% load static %}
+{% block contenido %}
+
+
+                    <div class="content-main">
+                    
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 biliend">
+                                <div class="banner-2-container">
+                                    <div class="aenean">
+                                        <h4>Anuncios </h4>
+                                        <h3>Ultimos 20 anuncios</h3>
+                                    </div>    
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="row margin-b-30">
+
+                            {% for anuncios in anuncios_admin %}
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                                {% if  anuncios.prioridad == "1"%}
+                                <div class="box london">
+                                {% endif %}
+                                {% if  anuncios.prioridad == "2"%}
+                                <div class="box paris">
+                                {% endif %}
+                                {% if  anuncios.prioridad == "3"%}
+                                <div class="box moscow">
+                                {% endif %}                                                    
+                                    <div class="box-icon">
+                                    {% if  anuncios.prioridad == "1"%}
+                                        <img src="{%static 'blog/images/home-img-2.jpg' %}" alt="Image" class="img-responsive">
+                                    {% endif %}
+                                    {% if  anuncios.prioridad == "2"%}
+                                        <img src="{%static 'blog/images/home-img-3.jpg' %}" alt="Image" class="img-responsive">
+                                    {% endif %}
+                                    {% if  anuncios.prioridad == "3"%}
+                                        <img src="{%static 'blog/images/home-img-3.jpg' %}" alt="Image" class="img-responsive">
+                                    {% endif %}                                    
+                                    </div>
+                                    <div class="info float-container">
+                                        {% if  anuncios.prioridad == "1"%}
+                                        <div class="col-sm-12 london-title">
+                                        {% endif %}
+                                        {% if  anuncios.prioridad == "2"%}
+                                        <div class="col-sm-12 london-title paris-title">
+                                        {% endif %} 
+                                        {% if  anuncios.prioridad == "3"%}
+                                        <div class="col-sm-12 moscow-title">
+                                        {% endif %}                                                                                  
+                                            <h3 class="text-uppercase">{{anuncios.titulo}}</h3>
+                                            <h4 class="text-uppercase">{{anuncios.fecha}}</h4>
+                                        </div>
+                                        <p>{{anuncios.contenido}}</p><hr />
+                                        <div class="col-sm-12 location-main">
+                                            {% if  anuncios.prioridad == "1"%}
+                                            <div class="pull-left location ">
+                                            {% endif %}
+                                            {% if  anuncios.prioridad == "2"%}
+                                            <div class="pull-left location location2 ">
+                                            {% endif %}
+                                            {% if  anuncios.prioridad == "3"%}
+                                            <div class="pull-left location3 ">
+                                            {% endif %}                                                                                        
+                                                <i class="fa fa-map-marker fa-2x"></i><span>{{anuncios.autor}}</span>
+                                            </div>
+                                            <div class="pull-right user-icons">
+                                                <a href="#"><i class="fa fa-star fa-2x"></i></a>
+                                                <a href="#"><i class="fa fa-user fa-2x"></i></a>
+                                                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {% endfor %}
+
+                            
+                        </div> <!-- row -->
+
+                        <div class="row margin-b-30">
+                            <div class="col-xs-12 col-sm-12 col-md-12 biliend">
+                                <div class="banner-2-container">
+                                    <div class="aenean">
+                                        <h4>Anuncios </h4>
+                                        <h3>Mas Antiguos</h3>
+                                    </div>    
+                                </div>                                
+                            </div>
+                        </div>
+
+                            <div class="row margin-b-30">
+
+                            {% for anuncios in anuncios_admin2 %}
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                                {% if  anuncios.prioridad == "1"%}
+                                <div class="box london">
+                                {% endif %}
+                                {% if  anuncios.prioridad == "2"%}
+                                <div class="box paris">
+                                {% endif %}
+                                {% if  anuncios.prioridad == "3"%}
+                                <div class="box moscow">
+                                {% endif %}                                                    
+                                    <div class="box-icon">
+                                    {% if  anuncios.prioridad == "1"%}
+                                        <img src="{%static 'blog/images/home-img-2.jpg' %}" alt="Image" class="img-responsive">
+                                    {% endif %}
+                                    {% if  anuncios.prioridad == "2"%}
+                                        <img src="{%static 'blog/images/home-img-3.jpg' %}" alt="Image" class="img-responsive">
+                                    {% endif %}
+                                    {% if  anuncios.prioridad == "3"%}
+                                        <img src="{%static 'blog/images/home-img-3.jpg' %}" alt="Image" class="img-responsive">
+                                    {% endif %}                                    
+                                    </div>
+                                    <div class="info float-container">
+                                        {% if  anuncios.prioridad == "1"%}
+                                        <div class="col-sm-12 london-title">
+                                        {% endif %}
+                                        {% if  anuncios.prioridad == "2"%}
+                                        <div class="col-sm-12 london-title paris-title">
+                                        {% endif %} 
+                                        {% if  anuncios.prioridad == "3"%}
+                                        <div class="col-sm-12 moscow-title">
+                                        {% endif %}                                                                                  
+                                            <h3 class="text-uppercase">{{anuncios.titulo}}</h3>
+                                            <h4 class="text-uppercase">{{anuncios.fecha}}</h4>
+                                        </div>
+                                        <p>{{anuncios.contenido}}</p><hr />
+                                        <div class="col-sm-12 location-main">
+                                            {% if  anuncios.prioridad == "1"%}
+                                            <div class="pull-left location ">
+                                            {% endif %}
+                                            {% if  anuncios.prioridad == "2"%}
+                                            <div class="pull-left location location2 ">
+                                            {% endif %}
+                                            {% if  anuncios.prioridad == "3"%}
+                                            <div class="pull-left location3 ">
+                                            {% endif %}                                                                                        
+                                                <i class="fa fa-map-marker fa-2x"></i><span>{{anuncios.autor}}</span>
+                                            </div>
+                                            <div class="pull-right user-icons">
+                                                <a href="#"><i class="fa fa-star fa-2x"></i></a>
+                                                <a href="#"><i class="fa fa-user fa-2x"></i></a>
+                                                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            
+                        </div> <!-- row -->
+                        </div> <!-- row -->
+
+                    </div> <!-- .content-main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock contenido %}

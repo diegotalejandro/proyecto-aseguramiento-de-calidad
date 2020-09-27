@@ -31,7 +31,13 @@ def index(request):
                     return redirect('home')
                 return redirect('home')
     return render(request, 'blog/index.html', {'form':form})
-            
+
+
+def logout(request):
+    #finaliza la sesion
+    do_logout(request)
+    #manda a la portada
+    return redirect('/')
 
 def home(request):
     if request.user.is_authenticated:
@@ -45,8 +51,13 @@ def home(request):
     return redirect('index')
 
 
-def logout(request):
-    #finaliza la sesion
-    do_logout(request)
-    #manda a la portada
-    return redirect('/')
+def news(request):
+    if request.user.is_authenticated:
+
+        anuncios_admin = Anuncio.objects.filter( tipo_usuario = "1" )[:20]
+        anuncios_admin2 = Anuncio.objects.filter( tipo_usuario = "1" )[21:]
+
+        return render(request,'blog/news.html',{'anuncios_admin':anuncios_admin,'anuncios_admin2':anuncios_admin2})
+
+
+    return redirect('index')
